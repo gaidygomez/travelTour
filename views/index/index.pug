@@ -1,0 +1,27 @@
+extends ../layaout/index.pug
+block slider
+    .slider
+        h1 Río de Janeiro
+        em aventura
+block container
+    main.container.mt-5
+        h2.text-center.mb-5 Sobre Nosotros
+        .row.mb-5
+            .col-md-6
+                p Nunc porta aliquam velit ac porttitor. Nunc porta aliquam velit ac porttitor. Mauris libero justo, imperdiet sit amet ligula nec, pretium porta turpis. Pellentesque eu nunc blandit nibh rutrum suscipit. Aliquam ultrices, odio congue lobortis congue, lacus sem rutrum lorem, at finibus ligula nunc eget ligula. Integer pellentesque augue vel mauris volutpat consectetur eu vel quam. Donec vestibulum quis ex ac convallis. Ut dictum consequat dui a consequat.
+            .col-md-6
+                img.img-fluid(src="img/inicio_nosotros.jpg", alt="Nosotros")
+        h1.text-center.mb-5 Próximos Viajes
+            include ../layaout/partials/travels.pug    
+    .descuento
+        .container
+            .row
+                .col-md-6
+                    .contenido
+                        h3 5% de Descuento
+                        p.titulo Viaje a Canadá
+                        p.fecha 20 de Marzo - 28 de Marzo
+                        p.precio $ 2.500 USD
+    .container.mt-5
+        h2.text-center.mb-5 Testimoniales
+        include ../layaout/partials/testimonies.pug

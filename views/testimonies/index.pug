@@ -1,0 +1,31 @@
+extends ../layaout/index.pug
+block container
+    main.container.mt-5
+        h1.text-center Testimoniales
+        
+        .row
+            .col-md-12
+                blockquote.text-center Lee sobre Nuestros Clientes y sus Experiencias
+                include ../layaout/partials/testimonies.pug
+
+        .row
+            .col-md-12
+                h2.text-center Agrega un Testimonio
+
+                if(error)
+                    each errores in error
+                        .alert.alert-danger.text-center= errores.mensaje
+                .row.justify-content-center
+                    .col-md-8
+                        form(action="/testimonies", method="post")
+                            .form-group
+                                label(for="nombre") Nombre
+                                input.form-control(id="nombre", type="text", placeholder="Ingrese su Nombre", name="nombre" value=nombre)
+                            .form-group
+                                label(for="email") Correo Electrónico
+                                input.form-control(id="email", type="email", name="email", placeholder="Ingrese su Email" value=email)
+                            .form-group
+                                label(for="mensaje") Mensaje
+                                textarea#mensaje.form-control(name="mensaje", cols="30", rows="10", placeholder="Escriba su testimonio aquí")=mensaje
+                            .form-group
+                                button.btn.btn-success.btn-block(type="submit") Registrar Testimonio
